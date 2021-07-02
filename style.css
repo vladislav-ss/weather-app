@@ -25,13 +25,16 @@ body {
 .location {
     margin-top: 10rem;
 }
-.location, .temperature {
-    width: 50%;
+.location, .app-box {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
 
+}
+
+img {
+    max-width: 120px;
 }
 
 .tempbox {
@@ -73,7 +76,7 @@ body {
 }
 
 .sub {
-    margin-top: 30vh;
+    margin-top: clamp(2vh, 26vh, 30vh);
     margin-bottom: 12px;
     text-align: center;
 }
