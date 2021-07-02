@@ -25,8 +25,7 @@ body {
 .location {
     margin-top: 10rem;
 }
-.location, .temperature {
-    width: 50%;
+.location, .app-box {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -35,7 +34,7 @@ body {
 }
 
 img {
-    width: 120px;
+    max-width: 120px;
 }
 
 .tempbox {
@@ -77,7 +76,7 @@ img {
 }
 
 .sub {
-    margin-top: 30vh;
+    margin-top: clamp(2vh, 26vh, 30vh);
     margin-bottom: 12px;
     text-align: center;
 }
