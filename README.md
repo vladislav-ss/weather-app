@@ -1,4 +1,4 @@
-# 2048-Lite
+# Weather-app
 
  **Weather App using geolocation**
 
