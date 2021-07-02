@@ -8,6 +8,7 @@ window.addEventListener('load', ()=> { // makes the script to wait for the page 
     const location = document.querySelector('.location-timezone');
 
     const icon = document.querySelector('.icon');
+    const iconplace = document.querySelector('.iconplace');
 
     const celsiusButton = document.querySelector(".celsius");
     const fahrenheitButton = document.querySelector(".fahr");
@@ -32,6 +33,9 @@ window.addEventListener('load', ()=> { // makes the script to wait for the page 
                 description.textContent = "Currently: " + data.weather[0].description;
                 location.textContent = data.name + `, ${data.sys.country}`;
                 icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+                let newimg = document.createElement("img");
+                newimg.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+                iconplace.appendChild(newimg);
             })
             
         });    

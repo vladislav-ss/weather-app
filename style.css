@@ -76,7 +76,7 @@ img {
 }
 
 .sub {
-    margin-top: 30vh;
+    bottom: 0;
     margin-bottom: 12px;
     text-align: center;
 }
