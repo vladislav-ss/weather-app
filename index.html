@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    
+    <div class="location">
+        <h1 class="location-timezone">Waiting for geolocation</h1>
+        <div id="icon"></div>
+        
+    </div>
+    <div class="temperature">
+
+        <div class="tempbox">
+            <h2 class="degrees">--</h2>
+            <span class="degreetype">°C</span>
+        </div>
+        <div class="switcher">
+            <span class="celsius selected">°C</span>
+            <span class="fahr">°F</span>
+            <span class="kelvin">°K</span>
+        </div>
+        
+        <div class="description">-----</div>
+    </div>
+    <div class="sub">
+        <p>*Will refresh automatically every 10 minutes</p>
+        <br>
+        <p>Developed by Vladislav S. as an exercise</p>
+        <p>This web app uses the OpenWeatherMap API.</p>
+        <p>You can check the code <a href="#">HERE (GitHub)</a><p>
+        <p>July 2021</p>
+      </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
