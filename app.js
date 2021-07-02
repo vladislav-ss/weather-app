@@ -1,21 +1,20 @@
-window.addEventListener('load', ()=> {
+window.addEventListener('load', ()=> { // makes the script to wait for the page to load
     let long;
     let lat;
     const api_key = 'dd5c611fabab8f629f108cbdcb8c9e0a';
 
-    let description = document.querySelector('.description');
-    let temperature = document.querySelector('.degrees');
-    let location = document.querySelector('.location-timezone');
+    const description = document.querySelector('.description');
+    const temperature = document.querySelector('.degrees');
+    const location = document.querySelector('.location-timezone');
 
-    let htmlIcon = document.getElementById("icon");
-    let icon = document.createElement("img");
-    let iconImage;
+    const icon = document.querySelector('.icon');
 
-    let celsiusButton = document.querySelector(".celsius");
-    let fahrenheitButton = document.querySelector(".fahr");
-    let kelvinButton = document.querySelector(".kelvin");
-    let degreetype = document.querySelector(".degreetype");
+    const celsiusButton = document.querySelector(".celsius");
+    const fahrenheitButton = document.querySelector(".fahr");
+    const kelvinButton = document.querySelector(".kelvin");
+    const degreetype = document.querySelector(".degreetype");
 
+    // Get geolocation, retrieve data through the API and display it on the app window
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(position => {
             long = position.coords.longitude;
@@ -28,15 +27,11 @@ window.addEventListener('load', ()=> {
                 return input.json();
             })
             .then(data => {
-                console.log(data);
                 ktemp = data.main.temp;
                 temperature.textContent = Math.round(ktemp - 273.15);
                 description.textContent = "Currently: " + data.weather[0].description;
-                iconImage = data.weather[0].icon;
                 location.textContent = data.name + `, ${data.sys.country}`;
-                console.log(iconImage);
-                icon.src = `http://openweathermap.org/img/wn/${iconImage}@2x.png`;
-                htmlIcon.appendChild(icon);
+                icon.src = `http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
             })
             
         });    
@@ -44,6 +39,8 @@ window.addEventListener('load', ()=> {
         location.textContent = "Allow geolocation in order to use the app";
     }
 
+
+    // Degree selector buttons
     celsiusButton.addEventListener('click', ()=> {
         celsiusButton.classList.add("selected");
         fahrenheitButton.classList.remove("selected");
@@ -64,12 +61,12 @@ window.addEventListener('load', ()=> {
         celsiusButton.classList.remove("selected");
         fahrenheitButton.classList.remove("selected");
         kelvinButton.classList.add("selected");
-        temperature.textContent = Math.floor(ktemp);
+        temperature.textContent = Math.round(ktemp);
         degreetype.textContent = "K";
     });
 });
 
-
+// Refresh page every 10 mins
 setTimeout(function(){
     window.location.reload(1);
  }, 600000);
