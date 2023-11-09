@@ -12,7 +12,7 @@ You can switch between Celsius, Fahrenheit and Kelvin, it defaults to Celsius as
 
 I have made this app as an exercise, but also to learn more and practice on my front end and general programming skills and knowledge.
 
-You can try out the app <a href="https://vladislavscr.github.io/weather-app/">HERE (GitHub pages)</a>.
+You can try out the app <a href="https://vladislav-ss.github.io/weather-app/">HERE (GitHub pages)</a>.
 *Don't forget to allow the browser to retrieve the geolocation data.
 
 Thank you for checking this out.
